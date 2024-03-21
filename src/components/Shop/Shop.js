@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Product from './Product'
 import CartProduct from './CartProduct'
-import Social from './Social'
 
 export default class Shop extends Component {
 
@@ -19,11 +18,7 @@ export default class Shop extends Component {
             ],
 
             shoppingCart: [],
-            socials: [
-                { id: 1, href: 'https://www.youtube.com', img: 'Images/YouTube Logo.png' },
-                { id: 2, href: 'https://www.spotify.com', img: 'Images/Spotify Logo.png' },
-                { id: 3, href: 'https://www.facebook.com', img: 'Images/YouTube Logo.png' },
-            ],
+
         }
 
 
@@ -33,16 +28,6 @@ export default class Shop extends Component {
     render() {
         return (
             <>
-                <header class="main-header">
-                    <nav class="main-nav nav">
-                        <ul>
-                            <li><a href="javascript">HOME</a></li>
-                            <li><a href="/#">STORE</a></li>
-                            <li><a href="/#">ABOUT</a></li>
-                        </ul>
-                    </nav>
-                    <h1 class="band-name band-name-large">SabzLearn Shop</h1>
-                </header>
                 <section class="container content-section">
                     <div class="shop-items">
 
@@ -66,15 +51,7 @@ export default class Shop extends Component {
                         Empty Cart
                     </button>
                 </section>
-                <footer class="main-footer">
-                    <div class="container main-footer-container">
-                        <h3 class="band-name">The Generics</h3>
-                        <ul class="nav footer-nav">
 
-                            <Social />
-                        </ul>
-                    </div>
-                </footer>
 
 
             </>
