@@ -21,10 +21,20 @@ export default class Shop extends Component {
             shoppingCart: [],
 
         }
-
-
+        this.addProduct = this.addProduct.bind(this)
     }
 
+    addProduct(productId){
+
+        let Products = [...this.state.products] 
+        
+        let newProduct = Products.find((Product) =>{
+            return Product.id === productId  
+        })
+        
+        this.state.shoppingCart.push(newProduct)
+        
+    }
 
     render() {
         return (
@@ -33,8 +43,7 @@ export default class Shop extends Component {
 
                     <section key={product.id} className="container content-section">
                         <div className="shop-items">
-                            {/* <img alt={product.title} src={product.img}/> */}
-                            <Product {...product}/>
+                            <Product {...product} onProduct={this.addProduct}/>
                         </div>
                     </section>
                 ))
