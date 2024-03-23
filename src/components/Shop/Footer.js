@@ -17,10 +17,10 @@ export default class Footer extends Component {
     render() {
         return (
             <>
-                <footer class="main-footer">
-                    <div class="container main-footer-container">
-                        <h3 class="band-name">The Generics</h3>
-                        <ul class="nav footer-nav">
+                <footer className="main-footer">
+                    <div className="container main-footer-container">
+                        <h3 className="band-name">The Generics</h3>
+                        <ul className="nav footer-nav">
                             <Social/>
                         </ul>
                     </div>
