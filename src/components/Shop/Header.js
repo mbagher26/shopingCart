@@ -12,15 +12,15 @@ export default class Header extends Component {
     render() {
         return (
             <>
-                <header class="main-header">
-                    <nav class="main-nav nav">
+                <header className="main-header">
+                    <nav className="main-nav nav">
                         <ul>
                             <li><a href="javascript">HOME</a></li>
                             <li><a href="/#">STORE</a></li>
                             <li><a href="/#">ABOUT</a></li>
                         </ul>
                     </nav>
-                    <h1 class="band-name band-name-large">SabzLearn Shop</h1>
+                    <h1 className="band-name band-name-large">SabzLearn Shop</h1>
                 </header>
             </>
         )
