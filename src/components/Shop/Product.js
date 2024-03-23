@@ -4,10 +4,13 @@ import './styles/Product.css'
 
 export default class Product extends Component {
     
-    
+    addToCartHandler(id){
+        this.props.onProduct(id)
+    }
+
     render() {
 
-        let { title, price, img} = this.props
+        let { id, title, price, img} = this.props
 
         return (
             <div className="shop-item">
@@ -16,6 +19,7 @@ export default class Product extends Component {
                 <div className="shop-item-details">
                     <span className="shop-item-price">{price}</span>
                     <button
+                        onClick={this.addToCartHandler.bind(this, id)}
                         className="btn btn-primary shop-item-button"
                         type="button">
                         ADD TO CART
