@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Product from './Product'
 import CartProduct from './CartProduct'
+import './styles/Shop.css'
 
 export default class Shop extends Component {
 
@@ -27,27 +28,31 @@ export default class Shop extends Component {
 
     render() {
         return (
-            <>
-                <section class="container content-section">
-                    <div class="shop-items">
+            <>{
+                this.state.products && this.state.products.map(product => (
 
-                        <Product />
+                    <section key={product.id} className="container content-section">
+                        <div className="shop-items">
+                            {/* <img alt={product.title} src={product.img}/> */}
+                            <Product {...product}/>
+                        </div>
+                    </section>
+                ))
+            }
+                <section className="container content-section">
+                    <h2 className="section-header">CART</h2>
+                    <div className="cart-row">
+                        <span className="cart-item cart-header cart-column">ITEM</span>
+                        <span className="cart-price cart-header cart-column">PRICE</span>
+                        <span className="cart-quantity cart-header cart-column">Doing</span>
                     </div>
-                </section>
-                <section class="container content-section">
-                    <h2 class="section-header">CART</h2>
-                    <div class="cart-row">
-                        <span class="cart-item cart-header cart-column">ITEM</span>
-                        <span class="cart-price cart-header cart-column">PRICE</span>
-                        <span class="cart-quantity cart-header cart-column">Doing</span>
-                    </div>
-                    <div class="cart-items">
+                    <div className="cart-items">
 
                         <CartProduct />
 
 
                     </div>
-                    <button class="btn btn-primary btn-purchase" type="button">
+                    <button className="btn btn-primary btn-purchase" type="button">
                         Empty Cart
                     </button>
                 </section>
