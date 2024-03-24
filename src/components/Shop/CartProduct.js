@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 
 export default class CartProduct extends Component {
 
+    removeHamdler(id){
+        this.props.onRemove(id)
+    }
+
     render() {
 
         return (
@@ -13,7 +17,7 @@ export default class CartProduct extends Component {
                 <span className="cart-price cart-column">{this.props.price}</span>
                 <div className="cart-quantity cart-column">
 
-                    <button className="btn btn-danger" type="button">REMOVE</button>
+                    <button className="btn btn-danger" type="button" onClick={this.removeHamdler.bind(this, this.props.id)}>REMOVE</button>
                 </div>
             </div>
         )
