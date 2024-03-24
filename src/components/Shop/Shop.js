@@ -17,26 +17,36 @@ export default class Shop extends Component {
                 { id: 5, title: 'Coffee', price: 5, img: 'Images/Cofee.png' },
                 { id: 6, title: 'Shirt', price: 50, img: 'Images/Shirt.png' },
             ],
-
+            
             shoppingCart: [],
-
+            
         }
         this.addProduct = this.addProduct.bind(this)
+        this.removeProduct = this.removeProduct.bind(this)
     }
 
     addProduct(productId) {
-
+        
         let Products = [...this.state.products]
-
+        
         let newProduct = Products.find((Product) => {
             return Product.id === productId
         })
-
+        
         this.setState({
             shoppingCart: [...this.state.shoppingCart,newProduct]
         })
     }
-
+    
+    removeProduct(productId){
+        let newProducts = this.state.shoppingCart.filter((product) =>{
+            return product.id !== productId
+        })
+        this.setState({
+            shoppingCart : [...newProducts]
+        })
+    }
+    
     render() {
         return (
             <>{
@@ -61,7 +71,7 @@ export default class Shop extends Component {
                         {
                             this.state.shoppingCart && this.state.shoppingCart.map(item => (
                                 <>
-                                    <CartProduct {...item} />
+                                    <CartProduct {...item}  onRemove={this.removeProduct}/>
                                 </>
                             ))
                         }
