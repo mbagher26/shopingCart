@@ -47,6 +47,11 @@ export default class Shop extends Component {
         })
     }
     
+    emptyHandler(){
+        this.setState({
+            shoppingCart : []
+        })
+    }
     render() {
         return (
             <>{
@@ -76,7 +81,7 @@ export default class Shop extends Component {
                             ))
                         }
                     </div>
-                    <button className="btn btn-primary btn-purchase" type="button">
+                    <button className="btn btn-primary btn-purchase" type="button" onClick={(event)=>this.emptyHandler(event)}>
                         Empty Cart
                     </button>
                 </section>
