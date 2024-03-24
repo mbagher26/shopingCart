@@ -24,16 +24,17 @@ export default class Shop extends Component {
         this.addProduct = this.addProduct.bind(this)
     }
 
-    addProduct(productId){
+    addProduct(productId) {
 
-        let Products = [...this.state.products] 
-        
-        let newProduct = Products.find((Product) =>{
-            return Product.id === productId  
+        let Products = [...this.state.products]
+
+        let newProduct = Products.find((Product) => {
+            return Product.id === productId
         })
-        
-        this.state.shoppingCart.push(newProduct)
-        
+
+        this.setState({
+            shoppingCart: [...this.state.shoppingCart,newProduct]
+        })
     }
 
     render() {
@@ -43,7 +44,7 @@ export default class Shop extends Component {
 
                     <section key={product.id} className="container content-section">
                         <div className="shop-items">
-                            <Product {...product} onProduct={this.addProduct}/>
+                            <Product {...product} onProduct={this.addProduct} />
                         </div>
                     </section>
                 ))
@@ -57,9 +58,13 @@ export default class Shop extends Component {
                     </div>
                     <div className="cart-items">
 
-                        <CartProduct />
-
-
+                        {
+                            this.state.shoppingCart && this.state.shoppingCart.map(item => (
+                                <>
+                                    <CartProduct {...item} />
+                                </>
+                            ))
+                        }
                     </div>
                     <button className="btn btn-primary btn-purchase" type="button">
                         Empty Cart
