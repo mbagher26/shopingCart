@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './styles/Header.css'
 
 export default class Header extends Component {
     constructor(props) {
@@ -20,7 +21,7 @@ export default class Header extends Component {
                             <li><a href="/#">ABOUT</a></li>
                         </ul>
                     </nav>
-                    <h1 className="band-name band-name-large">SabzLearn Shop</h1>
+                    <h1 className="band-name band-name-large">Superstore</h1>
                 </header>
             </>
         )
