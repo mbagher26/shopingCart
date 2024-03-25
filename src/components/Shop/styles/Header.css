@@ -1,0 +1,29 @@
+.main-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url('../Images/Album\ 1.png');
+    background-repeat: no-repeat;
+    background-size: 1525px;
+}
+
+.main-nav  ul{
+    display: flex;
+    flex-direction:row ;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    list-style-type: none;
+
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.band-name{
+    color: white;
+}
