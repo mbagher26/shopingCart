@@ -1,8 +1,21 @@
 .shop-item{
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 80px;
 }
 
-
-
+span{
+    text-align: center;
+}
+button{
+    background-color: chartreuse;
+    color: white;
+}
+.shop-item-details{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
