@@ -17,53 +17,56 @@ export default class Shop extends Component {
                 { id: 5, title: 'Coffee', price: 5, img: 'Images/Cofee.png' },
                 { id: 6, title: 'Shirt', price: 50, img: 'Images/Shirt.png' },
             ],
-            
+
             shoppingCart: [],
-            
+
         }
         this.addProduct = this.addProduct.bind(this)
         this.removeProduct = this.removeProduct.bind(this)
     }
 
     addProduct(productId) {
-        
+
         let Products = [...this.state.products]
-        
+
         let newProduct = Products.find((Product) => {
             return Product.id === productId
         })
-        
+
         this.setState({
-            shoppingCart: [...this.state.shoppingCart,newProduct]
+            shoppingCart: [...this.state.shoppingCart, newProduct]
         })
     }
-    
-    removeProduct(productId){
-        let newProducts = this.state.shoppingCart.filter((product) =>{
+
+    removeProduct(productId) {
+        let newProducts = this.state.shoppingCart.filter((product) => {
             return product.id !== productId
         })
         this.setState({
-            shoppingCart : [...newProducts]
+            shoppingCart: [...newProducts]
         })
     }
-    
-    emptyHandler(){
+
+    emptyHandler() {
         this.setState({
-            shoppingCart : []
+            shoppingCart: []
         })
     }
     render() {
         return (
-            <>{
-                this.state.products && this.state.products.map(product => (
+            <>
 
-                    <section key={product.id} className="container content-section">
-                        <div className="shop-items">
-                            <Product {...product} onProduct={this.addProduct} />
-                        </div>
-                    </section>
-                ))
-            }
+                <section className="container content-section">
+                    {
+                        this.state.products && this.state.products.map((product) => (
+                            <div key={product.id} className="shop-items">
+                                <Product {...product} onProduct={this.addProduct} />
+                            </div>
+                        ))
+                    }
+                </section>
+                
+
                 <section className="container content-section">
                     <h2 className="section-header">CART</h2>
                     <div className="cart-row">
@@ -76,12 +79,12 @@ export default class Shop extends Component {
                         {
                             this.state.shoppingCart && this.state.shoppingCart.map(item => (
                                 <>
-                                    <CartProduct {...item}  onRemove={this.removeProduct}/>
+                                    <CartProduct {...item} onRemove={this.removeProduct} />
                                 </>
                             ))
                         }
                     </div>
-                    <button className="btn btn-primary btn-purchase" type="button" onClick={(event)=>this.emptyHandler(event)}>
+                    <button className="btn btn-primary btn-purchase" type="button" onClick={(event) => this.emptyHandler(event)}>
                         Empty Cart
                     </button>
                 </section>
