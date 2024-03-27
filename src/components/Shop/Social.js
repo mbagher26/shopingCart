@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 
 export default class Social extends Component {
     render() {
-        console.log(this.props, 'props');
+        let { href, img} = this.props
         return (
             <li>
-                <a href="sabzlearn.ir" target="_blank">
-                    <img alt='' src="Images/YouTube Logo.png" />
+                <a href={href}>
+                    <img alt={href} src={img} style={{width: '90px' , height: '90px'}}/>
                 </a>
             </li>
         )
