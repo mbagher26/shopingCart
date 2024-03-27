@@ -7,10 +7,12 @@
 
 span{
     text-align: center;
+    margin: 3px;
 }
 button{
     background-color: chartreuse;
     color: white;
+    margin: 3px;
 }
 .shop-item-details{
     width: 100%;
