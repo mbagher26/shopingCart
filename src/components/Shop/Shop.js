@@ -43,7 +43,7 @@ export default class Shop extends Component {
             return product.id !== productId
         })
         this.setState({
-            shoppingCart: [...newProducts]
+            shoppingCart: newProducts
         })
     }
 
