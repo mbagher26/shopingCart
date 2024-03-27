@@ -56,7 +56,7 @@ export default class Shop extends Component {
         return (
             <>
 
-                <section className="container content-section">
+                <section className="container">
                     {
                         this.state.products && this.state.products.map((product) => (
                             <div key={product.id} className="shop-items">
@@ -67,7 +67,7 @@ export default class Shop extends Component {
                 </section>
                 
 
-                <section className="container content-section">
+                <section className="content-section">
                     <h2 className="section-header">CART</h2>
                     <div className="cart-row">
                         <span className="cart-item cart-header cart-column">ITEM</span>
