@@ -79,7 +79,7 @@ export default class Shop extends Component {
                         {
                             this.state.shoppingCart && this.state.shoppingCart.map(item => (
                                 <>
-                                    <CartProduct {...item} onRemove={this.removeProduct} />
+                                    <CartProduct key={item.id} {...item} onRemove={this.removeProduct} />
                                 </>
                             ))
                         }
