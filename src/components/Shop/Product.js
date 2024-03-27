@@ -14,7 +14,7 @@ export default class Product extends Component {
 
         return (
             <div className="shop-item">
-                <span className="shop-item-title">{this.props.title}</span>
+                <span className="shop-item-title">{title}</span>
                 <img className="shop-item-image" alt={title} src={img} />
                 <div className="shop-item-details">
                     <span className="shop-item-price">{price}</span>
