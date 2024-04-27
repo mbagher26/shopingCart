@@ -23,7 +23,7 @@ function Social(props) {
     return (
         <li>
             <a href={href}>
-                <img alt={href} src={img} />
+                <img className='img' alt={href} src={img} />
             </a>
         </li>
     )
