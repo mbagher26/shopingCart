@@ -103,12 +103,12 @@ function Shop() {
 
     const [products, setProducts] = useState(
         [
-            { id: 1, title: 'Album 1', price: 5, img: 'Images/Album 1.png' },
-            { id: 2, title: 'Album 2', price: 15, img: 'Images/Album 2.png' },
-            { id: 3, title: 'Album 3', price: 20, img: 'Images/Album 3.png' },
-            { id: 4, title: 'Album 4', price: 100, img: 'Images/Album 4.png' },
-            { id: 5, title: 'Coffee', price: 5, img: 'Images/Cofee.png' },
-            { id: 6, title: 'Shirt', price: 50, img: 'Images/Shirt.png' },
+            { id: 1, title: 'Album 1', price: 5, img: '/Images/Album 1.png' },
+            { id: 2, title: 'Album 2', price: 15, img: '/Images/Album 2.png' },
+            { id: 3, title: 'Album 3', price: 20, img: '/Images/Album 3.png' },
+            { id: 4, title: 'Album 4', price: 100, img: '/Images/Album 4.png' },
+            { id: 5, title: 'Coffee', price: 5, img: '/Images/Cofee.png' },
+            { id: 6, title: 'Shirt', price: 50, img: '/Images/Shirt.png' },
         ]);
     // console.log(products);
 
