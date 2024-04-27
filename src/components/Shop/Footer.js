@@ -40,9 +40,9 @@ import React from 'react'
 
 function Footer() {
     const socials = [
-        { id: 1, href: 'https://www.youtube.com', img: 'Images/YouTube Logo.png' },
-        { id: 2, href: 'https://www.spotify.com', img: 'Images/Spotify Logo.png' },
-        { id: 3, href: 'https://www.facebook.com', img: 'Images/YouTube Logo.png' },
+        { id: 1, href: 'https://www.youtube.com', img: '/Images/Youtube.png' },
+        { id: 2, href: 'https://www.spotify.com', img: '/Images/Spotify Logo.png' },
+        { id: 3, href: 'https://www.facebook.com', img: '/Images/Facebook Logo.png' },
     ]
 
     return (
@@ -52,7 +52,7 @@ function Footer() {
                 <ul className="nav footer-nav">
                     {
                         socials && socials.map((social) => (
-                            <Social key={social.id} />
+                            <Social key={social.id} {...social} />
                         ))
                     }
                 </ul>
