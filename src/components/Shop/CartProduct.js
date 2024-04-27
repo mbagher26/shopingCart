@@ -36,7 +36,7 @@ function CartProduct(props) {
   return (
       <div className="cart-row">
           <div className="cart-item cart-column">
-              <img className="cart-item-image" alt='' src={img} width="100" height="100" />
+              <img className="cart-item-image" alt='' src={img} width='100px' height='80px'/>
               <span className="cart-item-title">{title}</span>
           </div>
           <span className="cart-price cart-column">{price}</span>
